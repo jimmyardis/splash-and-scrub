@@ -1,38 +1,47 @@
 ## Meta
 | Field | Value |
 | Project | Splash and Scrub |
-| Last Active | 2026-09-18 |
+| Last Active | 2026-10-01 |
 | Status | shipping |
 | Location | /home/wner/splash-and-scrub |
 | Repo | jimmyardis/splash-and-scrub (public) |
-| Live URL | https://jimmyardis.github.io/splash-and-scrub/ |
+| Live URL | https://splashandscrubsc.com/ |
 
 ## Current State
-Live on GitHub Pages, verified by a byte-for-byte diff of the deployed page
-against the local file. One self-contained `index.html` (~7.0 MB)
-for the Irmo, SC car and boat wash at 1016 Rauch-Metz Rd: inlined CSS, embedded
-SVG favicon, and art baked in as data URIs, so there are no external assets to
-break. Only outbound links are the `tel:` number (803-834-0367) and a Google
-Maps directions link; everything else is in-page anchors, including a separate
-mobile nav. The file was authored elsewhere and pushed as delivered — no edits
-to the markup.
+Live at https://splashandscrubsc.com on GitHub Pages with HTTPS enforced; the
+`www` host, plain `http`, and the old github.io URL all 301 to it. One
+self-contained `index.html` (~7.0 MB) for the Irmo, SC car and boat wash at
+1016 Rauch-Metz Rd: inlined CSS, embedded SVG favicon, and art baked in as data
+URIs, so there are no external assets to break. The file was authored elsewhere
+and pushed as delivered; the only repo-side additions are `.nojekyll` and `CNAME`.
 
 ## Next Action
-Decide whether the site gets a custom domain (e.g. splashandscrubirmo.com) or
-stays on the github.io URL; a domain means a CNAME file plus Namecheap DNS.
+Confirm with the owner that the hours, prices, and service details on the page
+are final rather than placeholder copy.
 
 ## Blockers
 None.
 
 ## Open Questions
-- Custom domain, or is the github.io URL fine for now?
 - Are the hours, prices, and bay/service details on the page confirmed by the
   owner, or still placeholder copy?
 - Does the business want Google Business Profile and Search Console set up, the
   way Lake Murray Tree Service was?
 - Any real photos of the bays to swap in for the illustrated art?
+- The page has no canonical or `og:url` tag; worth adding in the next delivered
+  build now that there is a real domain?
 
 ## Session Log
+### 2026-10-01
+- Moved the site to the custom domain `splashandscrubsc.com` (apex). DNS was
+  already in place at Namecheap before this session: four GitHub Pages A
+  records on the apex and `www` CNAME to `jimmyardis.github.io`.
+- Added a `CNAME` file, pushed, set the domain through the Pages API, and
+  turned on HTTPS enforcement once the certificate (apex + `www`, expires
+  2026-12-30) showed as approved.
+- Verified live: `https://splashandscrubsc.com/` returns 200 with the full
+  6,959,469-byte page; `http://`, `www`, and the old github.io URL all 301 to
+  it. `index.html` was not touched: it had no hard-coded github.io references.
 ### 2026-09-18
 - Replaced `index.html` with `splash-and-scrub-updated.html` as delivered,
   committed, pushed, and confirmed the deployed page matches byte-for-byte
