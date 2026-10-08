@@ -1,19 +1,19 @@
 ## Meta
 | Field | Value |
 | Project | Splash and Scrub |
-| Last Active | 2026-10-01 |
+| Last Active | 2026-10-08 |
 | Status | shipping |
 | Location | /home/wner/splash-and-scrub |
 | Repo | jimmyardis/splash-and-scrub (public) |
 | Live URL | https://splashandscrubsc.com/ |
 
 ## Current State
-Live at https://splashandscrubsc.com on GitHub Pages with HTTPS enforced; the
-`www` host, plain `http`, and the old github.io URL all 301 to it. One
-self-contained `index.html` (~7.0 MB) for the Irmo, SC car and boat wash at
-1016 Rauch-Metz Rd: inlined CSS, embedded SVG favicon, and art baked in as data
-URIs, so there are no external assets to break. The file was authored elsewhere
-and pushed as delivered; the only repo-side additions are `.nojekyll` and `CNAME`.
+Live at https://splashandscrubsc.com on GitHub Pages (HTTPS, apex domain). One
+self-contained `index.html` (~8.4 MB, all art as data URIs). As of 2026-10-08 it
+is hand-edited in the repo: the original painted design is kept, but the hero
+now uses the boat photo (desktop and mobile) with real HTML headline and buttons,
+the location panel has a live Google Maps embed, and the gallery's RV slot shows
+a real photo of the bays and vacuums.
 
 ## Next Action
 Confirm with the owner that the hours, prices, and service details on the page
@@ -27,11 +27,30 @@ None.
   owner, or still placeholder copy?
 - Does the business want Google Business Profile and Search Console set up, the
   way Lake Murray Tree Service was?
-- Any real photos of the bays to swap in for the illustrated art?
+- More real photos to replace the remaining illustrated art (soapy car, SUV)?
+- Retire the separate boat-hero repo now that production has the boat hero?
 - The page has no canonical or `og:url` tag; worth adding in the next delivered
   build now that there is a real domain?
 
 ## Session Log
+### 2026-10-08
+- Desktop hero: overlaid the boat photo (taken from the boat-hero repo) on the
+  top ~70% of the painted #services panel, with HTML eyebrow, headline, and
+  Get directions / View wash options buttons. The painted service cards stay.
+  The old painted-button hotspots under it were removed, and a white mask hides
+  the painted splash that had bled into the bottom of the header strip.
+- Mobile hero: the painted logo banner was replaced with the boat photo. The
+  existing headline, CTAs, and cards are unchanged.
+- Replaced the gray map placeholder with a keyless Google Maps embed
+  (`/maps/embed?pb=` by street address) and added the same map to the mobile
+  location section. Searching by business name dropped the pin on "Storage
+  Rentals of America", so the map uses the address only.
+- Gallery slot 3 (RV) now shows the new bays/vacuums photo (IMG_0039, resized
+  to 1536x864) on both desktop and mobile.
+- Decision: hand-edited the file in the repo instead of waiting for a new
+  delivery, as the owner asked. If an outside build is delivered later, these
+  edits must be carried into it or they will be lost.
+- Verified on the live URL with headless Chromium (desktop 1440 and mobile 390).
 ### 2026-10-01
 - Moved the site to the custom domain `splashandscrubsc.com` (apex). DNS was
   already in place at Namecheap before this session: four GitHub Pages A
