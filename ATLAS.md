@@ -9,7 +9,7 @@
 
 ## Current State
 Live at https://splashandscrubsc.com on GitHub Pages (HTTPS, apex domain). One
-self-contained `index.html` (~8.4 MB, all art as data URIs). As of 2026-10-08 it
+self-contained `index.html` (~8.8 MB, all art as data URIs). As of 2026-10-08 it
 is hand-edited in the repo: the original painted design is kept, but the hero
 now uses the boat photo (desktop and mobile) with real HTML headline and buttons,
 the location panel has a live Google Maps embed, and the gallery's RV slot shows
@@ -51,6 +51,9 @@ None.
   delivery, as the owner asked. If an outside build is delivered later, these
   edits must be carried into it or they will be lost.
 - Verified on the live URL with headless Chromium (desktop 1440 and mobile 390).
+- Follow-up: re-cropped the bays photo (cut sky off the top, zoomed ~1.37x,
+  shaped to the slot at 1536x986) so its asphalt/treeline and blue rooflines
+  line up with the vacuum photo beside it. Page is now ~8.8 MB.
 ### 2026-10-01
 - Moved the site to the custom domain `splashandscrubsc.com` (apex). DNS was
   already in place at Namecheap before this session: four GitHub Pages A
