@@ -1,7 +1,7 @@
 ## Meta
 | Field | Value |
 | Project | Splash and Scrub |
-| Last Active | 2026-10-08 |
+| Last Active | 2026-10-13 |
 | Status | shipping |
 | Location | /home/wner/splash-and-scrub |
 | Repo | jimmyardis/splash-and-scrub (public) |
@@ -9,11 +9,11 @@
 
 ## Current State
 Live at https://splashandscrubsc.com on GitHub Pages (HTTPS, apex domain). One
-self-contained `index.html` (~8.8 MB, all art as data URIs). As of 2026-10-08 it
-is hand-edited in the repo: the original painted design is kept, but the hero
-now uses the boat photo (desktop and mobile) with real HTML headline and buttons,
-the location panel has a live Google Maps embed, and the gallery's RV slot shows
-a real photo of the bays and vacuums.
+self-contained `index.html` (~7.8 MB, all art as data URIs). The client chose
+the **logo hero** over the boat-photo hero on 2026-10-13, so production now
+carries the original painted logo banner again. All the other 2026-10-08
+hand-edits are retained: the live Google Maps embed in the location panel and
+the real bays/vacuums photo in the gallery.
 
 ## Next Action
 Confirm with the owner that the hours, prices, and service details on the page
@@ -28,11 +28,24 @@ None.
 - Does the business want Google Business Profile and Search Console set up, the
   way Lake Murray Tree Service was?
 - More real photos to replace the remaining illustrated art (soapy car, SUV)?
-- Retire the separate boat-hero repo now that production has the boat hero?
+- Retire the `splash-and-scrub-boat-hero` repo now that its version has been
+  promoted to production and the boat-photo hero is the losing variant?
 - The page has no canonical or `og:url` tag; worth adding in the next delivered
   build now that there is a real domain?
 
 ## Session Log
+### 2026-10-13
+- The client picked the logo hero. Replaced production's `index.html` with the
+  file from `splash-and-scrub-boat-hero` (whose name is historical — it holds
+  the logo-hero option) and pushed. `CNAME` and `.nojekyll` untouched.
+- Diffed the two files with data URIs stripped before overwriting: the only
+  difference is the `.boat-hero` overlay block and the mobile `.hero-art>.boat`
+  rule. The Maps embed, the bays photo, and the gallery crop are present in
+  both, so nothing from the 2026-10-08 session was lost in the swap.
+- The boat-photo hero is not deleted — it stays recoverable at commit 55c39c4.
+- Verified on the live URL with headless Chromium at 1440 and 390 wide: desktop
+  shows the painted logo banner with the Get directions / View wash options
+  hotspots, mobile shows the painted banner above the stacked headline.
 ### 2026-10-08
 - Desktop hero: overlaid the boat photo (taken from the boat-hero repo) on the
   top ~70% of the painted #services panel, with HTML eyebrow, headline, and
