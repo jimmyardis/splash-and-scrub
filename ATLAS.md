@@ -1,7 +1,7 @@
 ## Meta
 | Field | Value |
 | Project | Splash and Scrub |
-| Last Active | 2026-10-13 |
+| Last Active | 2026-10-19 |
 | Status | shipping |
 | Location | /home/wner/splash-and-scrub |
 | Repo | jimmyardis/splash-and-scrub (public) |
@@ -13,7 +13,8 @@ self-contained `index.html` (~7.8 MB, all art as data URIs). The client chose
 the **logo hero** over the boat-photo hero on 2026-10-13, so production now
 carries the original painted logo banner again. All the other 2026-10-08
 hand-edits are retained: the live Google Maps embed in the location panel and
-the real bays/vacuums photo in the gallery.
+the real bays/vacuums photo in the gallery. Contact phone is 803.995.2206
+(changed from 803.834.0367 on 2026-10-19).
 
 ## Next Action
 Confirm with the owner that the hours, prices, and service details on the page
@@ -34,6 +35,11 @@ None.
   build now that there is a real domain?
 
 ## Session Log
+### 2026-10-19
+- Changed the contact phone everywhere on the page (meta description, schema,
+  tel: links, visible text) from 803.834.0367 to 803.995.2206, at the user's
+  request. Verified live on splashandscrubsc.com.
+
 ### 2026-10-13
 - The client picked the logo hero. Replaced production's `index.html` with the
   file from `splash-and-scrub-boat-hero` (whose name is historical — it holds
