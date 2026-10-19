@@ -8,24 +8,23 @@
 | Live URL | https://splashandscrubsc.com/ |
 
 ## Current State
-Live at https://splashandscrubsc.com on GitHub Pages (HTTPS, apex domain). One
-self-contained `index.html` (~7.8 MB, all art as data URIs). The client chose
-the **logo hero** over the boat-photo hero on 2026-10-13, so production now
-carries the original painted logo banner again. All the other 2026-10-08
-hand-edits are retained: the live Google Maps embed in the location panel and
-the real bays/vacuums photo in the gallery. Contact phone is 803.995.2206
-(changed from 803.834.0367 on 2026-10-19).
+Live at https://splashandscrubsc.com on GitHub Pages (HTTPS, apex domain). As of
+2026-10-19 the page is `index.html` (~25 KB) plus `img/*.webp` (~1 MB, was 7.8 MB
+of inline data URIs), with AutoWash JSON-LD, canonical/OG tags, `robots.txt` and
+`sitemap.xml`. Hours read "Open 24 hours, 7 days a week" to match the Google
+profile; phone 803.995.2206; Google Map embedded in the Location section.
 
 ## Next Action
-Confirm with the owner that the hours, prices, and service details on the page
-are final rather than placeholder copy.
+Submit https://splashandscrubsc.com/sitemap.xml in Google Search Console and run
+the page through Google's Rich Results Test to confirm the AutoWash schema.
 
 ## Blockers
 None.
 
 ## Open Questions
-- Are the hours, prices, and bay/service details on the page confirmed by the
-  owner, or still placeholder copy?
+- Prices and bay/service details: confirmed by the owner, or still placeholder?
+- A future outside re-delivery of a self-contained index.html would undo the
+  image split, schema and hours. Re-apply them rather than overwrite blindly.
 - Does the business want Google Business Profile and Search Console set up, the
   way Lake Murray Tree Service was?
 - More real photos to replace the remaining illustrated art (soapy car, SUV)?
@@ -35,6 +34,18 @@ None.
   build now that there is a real domain?
 
 ## Session Log
+### 2026-10-19 (search + speed pass)
+- Hours now match the Google Business Profile (open 24 hours): desktop contact
+  block, mobile location + footer, FAQ split into hours/prices.
+- Added AutoWash JSON-LD (name, address, phone, 24/7, areaServed), canonical,
+  Open Graph/Twitter tags + img/share.jpg, robots.txt, sitemap.xml; title and
+  description now say "24-hour".
+- Moved all 25 inline images into img/*.webp (the two photos were embedded
+  twice; resized to 900px). Lazy-loading below the fold and preloading the hero.
+  The 7.8 MB page went down to 25 KB of HTML plus about 1 MB of images.
+- The Map embed requested from the profile review was already in place (2026-10-08).
+- No lat/long in the schema: the Census and OSM geocoders don't know the address.
+
 ### 2026-10-19
 - Changed the contact phone everywhere on the page (meta description, schema,
   tel: links, visible text) from 803.834.0367 to 803.995.2206, at the user's
